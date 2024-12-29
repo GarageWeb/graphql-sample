@@ -34,6 +34,7 @@ class Enumerable {
                                     skip: ${ skip }
                                 ) {
                                     identifier
+                                    
                                 }
                         }`
                     });            
@@ -59,6 +60,7 @@ class Enumerable {
                                     skip: ${ index - 1}
                                 ) {
                                     identifier
+                                    
                                 }
                         }`
                     });            
@@ -78,11 +80,14 @@ class Enumerable {
                                         first: 1
                                         skip: ${ index - 1}
                                     ) {
-                                        identifier
+                                        identifier,
+                                        uri
+                                        
+                                        
                                     }
                             }`
                         });            
-                return results.data.erc721Tokens.length > 0 ? Number(results.data.erc721Tokens[0].identifier) : null;
+                return results.data.erc721Tokens.length > 0 ? results.data.erc721Tokens[0].uri : null;
             }    
     }
 
@@ -102,6 +107,7 @@ class Enumerable {
                                     skip: ${ skip }
                                 ) {
                                     identifier
+                                    
                                 }
                         }`
                     });            
